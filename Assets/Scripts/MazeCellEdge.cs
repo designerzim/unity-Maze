@@ -3,7 +3,7 @@
 public abstract class MazeCellEdge : MonoBehaviour
 {
 
-	protected MazeCell cell, otherCell;
+	public MazeCell cell, otherCell;
 
 	public MazeDirection direction;
 
@@ -18,4 +18,7 @@ public abstract class MazeCellEdge : MonoBehaviour
 		transform.localRotation = direction.ToRotation ();
 	}
 
+    public virtual void OnPlayerEntered() { }
+
+    public virtual void OnPlayerExited() { }
 }

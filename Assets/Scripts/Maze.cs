@@ -74,6 +74,10 @@ public class Maze : MonoBehaviour
 			yield return delay;
 			DoNextGenerationStep(activeCells);
 		}
+        for (int i=0; i < rooms.Count; i++)
+        {
+            rooms[i].Hide();
+        }
 	}
 
     /// <summary>
@@ -188,7 +192,6 @@ public class Maze : MonoBehaviour
 			wall.Initialize(otherCell,cell,direction.GetOpposite());
 			wallCounter++;
 		}
-		Debug.Log (wallCounter + " walls made.");
 	}
 
     /// <summary>
